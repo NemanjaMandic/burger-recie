@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import Layout from "./components/Layout";
-import BurgerBuilder from "./containers/BurgerBuilder";
-import './App.css';
+import {BurgerBuilder} from "./containers";
+
 
 
 const App: FC = () => {
