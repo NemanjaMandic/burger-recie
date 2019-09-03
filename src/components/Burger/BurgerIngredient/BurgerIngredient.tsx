@@ -1,35 +1,36 @@
-import React, {SFC} from 'react';
+import React, {FunctionComponent} from 'react';
+import { BreadBottom, BreadTop, Seeds1, Seeds2, Meat, Cheese, Salad, Bacon } from './BurgerIngredient.styled';
 
 export interface IBurgerIngredientsProps {
     type: string
 }
  
-const BurgerIngredients: SFC<IBurgerIngredientsProps> = (props: IBurgerIngredientsProps) => {
+const BurgerIngredients: FunctionComponent<IBurgerIngredientsProps> = (props: IBurgerIngredientsProps) => {
     let ingredient = null;
 
     switch(props.type){
         case('bread-bottom'):
-            ingredient = <div className={`classes.BreadBottom`}></div>;
+            ingredient = <BreadBottom />;
          break;
          case('bread-top'):
             ingredient = (
-            <div className={`classes.BreadTop`}>
-                <div className={`classes.Seeds1`}></div>
-                <div className={`classes.Seeds2`}></div>
-            </div>
+            <BreadTop>
+                <Seeds1 />
+                <Seeds2 />
+            </BreadTop>
          );
          break;
          case('meat'):
-            ingredient = <div className={`classes.Meat`}></div>
+            ingredient = <Meat />
          break;
          case('cheese'):
-            ingredient = <div className={`classes.Cheese`}></div>
+            ingredient = <Cheese />
          break;
          case('bacon'):
-            ingredient = <div className={`classes.Bacon`}></div>
+            ingredient = <Bacon />
          break;
          case('salad'):
-            ingredient = <div className={`classes.Salad`}></div>
+            ingredient = <Salad />
          break;
          default:
                 ingredient = null;
